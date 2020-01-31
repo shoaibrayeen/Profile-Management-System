@@ -1,0 +1,44 @@
+<head>
+    <p style="text-align: center; color: #1589FF; font-size: 1.5em">
+        Admin Portal
+    </p>
+</head>
+<body style="text-align: center; color: #1589FF; font-size: 1.2em">
+    <p style="text-align: center; color: #FF8050; font-size: 1.2em">
+    Create User
+    </p>
+  <%= form_with scope: :user, url: admins_path, local: true do |form| %>
+
+    <% if @adminObj.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@adminObj.errors.count, "error") %> prohibited
+          <br>Information is too short.
+        </h2>
+        <ul>
+          <% @adminObj.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+    <%= form.label(:name, "Name: ") %>
+    <%= form.text_field(:name) %> <br><br>
+    <%= form.label(:email, "Email: ") %>
+    <%= form.text_field(:email) %> <br><br>
+    <%= form.label(:phone, "Phone: ") %>
+    <%= form.text_field(:phone) %> <br><br>
+    <%= form.label(:password, "Password: ") %>
+    <%= form.password_field(:password) %> <br><br>
+    <%= form.label(:parent, "Parent: ") %>
+    <%= form.text_field(:parent) %> <br><br>
+    <%= form.submit("Create") %>
+  <% end %>
+
+
+
+  <br><br>
+  <%= link_to 'Home', admins_path %>
+</body>

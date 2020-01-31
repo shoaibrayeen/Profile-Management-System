@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile Management System</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <header>
+  <p  style="text-align: center; color:  #FF8050; font-size: 1.6em">
+    Profile Management System
+    </p>  
+  </header>
+  <body>
+  <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+  <%= yield %>
+  </body>
+  <footer>
+  
+    <p style="text-align: center; color:  #FF8050; font-size: 1em">
+      &copy;&nbsp;2020 Shoaib Rayeen &nbsp; <br><br>
+    </p>
+</footer>
+</html>
