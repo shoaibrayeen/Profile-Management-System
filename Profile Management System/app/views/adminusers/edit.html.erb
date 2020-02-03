@@ -1,0 +1,34 @@
+<head>
+    <p style="text-align: center; color: #1589FF; font-size: 1.5em">
+        Admin Portal
+    </p>
+</head>
+<body style="text-align: center; color: #1589FF; font-size: 1.2em">
+    <p style="text-align: center; color: #FF8050; font-size: 1.2em">
+    Edit User
+    </p>
+  <%= form_with local: true do |form| %>
+ 
+    <%= form.label(:name, "Name: ") %>
+    <%= form.text_field(:name, value: @adminObj.name) %> <br><br>
+    <%= form.label(:email, "Email: ") %>
+    <%= form.text_field(:email, value: @adminObj.email) %> <br><br>
+    <%= form.label(:contact, "Contact: ") %>
+    <%= form.text_field(:contact, value: @adminObj.contact) %> <br><br>
+    <%= form.label(:password, "Password: ") %>
+    <%= form.password_field(:password, value: @adminObj.password) %> <br><br>
+    Type: <%= form.select :user_type, ['Broker', 'Owner', 'Buyer']%><br><br>
+    <%= form.label(:parent_id, "Parent ID: ") %>
+    <%= form.text_field(:parent_id, value: @adminObj.parent_id) %> <br><br>
+    Status: <%= form.select :status, ['activate', 'deactivate']%><br><br>
+    <%= form.submit("Update") %>
+ 
+  <% end %>
+
+    <br><br>
+    <%= link_to 'User Portal Home', adminusers_path %>
+    <br><br>
+    <%= link_to 'Admin Portal Home', admin_index_path %>
+    <br><br>
+    <%= link_to 'Admin Signout', admin_signout_path %>
+</body>
