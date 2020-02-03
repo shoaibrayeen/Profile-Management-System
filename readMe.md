@@ -40,16 +40,4 @@ Caching/Token store : Redis
 Background Jobs/Async Processing : Sidekiq
 
 
-
-
-
-EVALUATION CRITERIA
-
-Completeness( Basics - 45, Additional  - 15) - 60
-Code quality(Code reuse, Variables, Structure, Documentation, Best practices) - 20
-Schema(Normal Form, Indexes, Associations) - 20
-
-Duration : 2 week(Starting 20th Jan, 2020)
-Mid Evaluation by Mentors : 27th Jan, 2020
-Final Evaluation : 3rd Feb, 2020
 ```
