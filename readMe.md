@@ -74,6 +74,21 @@ To Use Model
   
 ```
 
+To Use API
+```sh
+  # After Starting Server
+  # Go to POSTMAN APP
+  
+  localhost:3000/api/get_profile #Give id and get Information
+  
+  
+  localhost:3000/api/signup #Give related information in the body and it'd validate accordingly
+  
+  
+  localhost:3000/api/signin #Give email and password in the body and it'd validate accordingly
+  
+```
+
 ### License
 [![Apache License](https://img.shields.io/badge/license-Apache-brightgreen.svg)](http://www.apache.org/licenses/)
 
