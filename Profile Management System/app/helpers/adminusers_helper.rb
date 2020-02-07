@@ -1,2 +1,0 @@
-module AdminusersHelper
-end
