@@ -74,7 +74,7 @@ To Use Model
   
 ```
 
-To Use API
+To Use POSTMAN API
 ```sh
   # After Starting Server
   # Go to POSTMAN APP
