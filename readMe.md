@@ -79,13 +79,13 @@ To Use POSTMAN API
   # After Starting Server
   # Go to POSTMAN APP
   
-  localhost:3000/api/get_profile #Give id and get Information
+  GET localhost:3000/api/get_profile #Give id and get Information
   
   
-  localhost:3000/api/signup #Give related information in the body and it'd validate accordingly
+  POST localhost:3000/api/signup #Give related information in the body and it'd validate accordingly
   
   
-  localhost:3000/api/signin #Give email and password in the body and it'd validate accordingly
+  POST localhost:3000/api/signin #Give email and password in the body and it'd validate accordingly
   
 ```
 
