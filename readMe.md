@@ -1,5 +1,5 @@
 ## Profile Management System
-<img src="/image/made_with_ror.jpeg" width="200" height="50">
+<img src="/images/made_with_ror.jpeg" width="200" height="50">
 
 
 ### Overview
@@ -74,7 +74,7 @@ To Use Model
   
 ```
 
-To Use POSTMAN API
+To Use Postman API
 ```sh
   # After Starting Server
   # Go to POSTMAN APP
@@ -88,6 +88,57 @@ To Use POSTMAN API
   POST localhost:3000/api/signin #Give email and password in the body and it'd validate accordingly
   
 ```
+
+## Demo of the Project
+<details>
+<summary>Use Portal</summary>
+
+<img src="/images/user_main.png">
+</details>	
+
+<details>
+<summary>Use Portal After Logged In</summary>
+
+<img src="/images/user_portal.png">
+</details>	
+
+<details>
+<summary>Admin Main</summary>
+
+<img src="/images/admin_main.png">
+</details>	
+
+<details>
+<summary>Admin Portal After Logged In</summary>
+
+<img src="/images/admin_portal.png">
+</details>	
+
+<details>
+<summary>Admin Report Panel</summary>
+
+<img src="/images/admin_report.png">
+</details>	
+
+<details>
+<summary>Admin Report Result</summary>
+
+<img src="/images/admin_report_result.png">
+</details>	
+
+<details>
+<summary>Admin Search Panel</summary>
+
+<img src="/images/admin_search.png">
+</details>	
+
+<details>
+<summary>Admin Search Result</summary>
+
+<img src="/images/admin_search_result.png">
+</details>	
+
+
 
 ### License
 [![Apache License](https://img.shields.io/badge/license-Apache-brightgreen.svg)](http://www.apache.org/licenses/)
