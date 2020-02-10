@@ -1,5 +1,10 @@
 class ReportGeneratorWorker
-  
+ 
+=begin
+  **Author:** Mohd Shoaib Rayeen  
+  **Common Name:** Worker to put information in the DB
+=end
+
   include Sidekiq::Worker
   def perform(*args)
     date = Date.today.to_s

@@ -104,11 +104,19 @@ class UsersController < ApplicationController
   end
 
 
+=begin
+  **Author:** Mohd Shoaib Rayeen  
+  **Common Name:** User information would be rendered!  
+=end
 
   def edit_bio
     @user = User.get_user_info_by_id(session[:user_id])
   end
 
+=begin
+  **Author:** Mohd Shoaib Rayeen  
+  **Common Name:** user's information can be updated
+=end
   def update_bio
     if params[:name] == "" or params[:email] == "" or params[:contact] == ""
       flash[:error] = 'Please Enter All Details'
@@ -126,11 +134,26 @@ class UsersController < ApplicationController
     end
   end
 
+=begin
+  **Author:** Mohd Shoaib Rayeen  
+  **Common Name:** View for change password
+=end
+
   def change_password
   end
 
+=begin
+  **Author:** Mohd Shoaib Rayeen  
+  **Common Name:** Update User password 
+=end
+
+
   def update_password
-    if params[:password] != params[:value] or (params[:password] == "" or params[:value] == "")
+    if params[:password].length < 6 or params[:value].length < 6
+      flash[:error] = 'Password Length Should be greater than or equal to 6.'
+      redirect_to change_password_path
+      return
+    elsif params[:password] != params[:value] or (params[:password] == "" or params[:value] == "")
       flash[:error] = 'Password Mismatch'
       redirect_to change_password_path
       return

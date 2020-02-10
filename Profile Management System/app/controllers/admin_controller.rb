@@ -19,7 +19,6 @@ class AdminController < ApplicationController
 
         session[:username] = params[:username]
         session[:authenticate_admin] = true
-        session[:expires_at_admin] = Time.current + 20.minutes
 
         flash[:success] = "You have been logged in."
         redirect_to admin_index_path
@@ -48,7 +47,6 @@ class AdminController < ApplicationController
 
         session[:username] = params[:username]
         session[:authenticate_admin] = true
-        session[:expires_at_admin] = Time.current + 20.minutes
 
         redirect_to admin_index_path
 
@@ -70,7 +68,6 @@ class AdminController < ApplicationController
     
     session[:username] = nil
     session[:authenticate_admin] = false
-    session[:expires_at_admin] = Time.current + 20.minutes
 
     flash[:success] = "You have successfully logged out!"
     redirect_to admin_signin_path
@@ -83,7 +80,7 @@ class AdminController < ApplicationController
   def search_result
     @adminObj = User.search_record(params)
     if !@adminObj.first
-      flash[:Error] = "Either Query is empty or Record Not Found!"
+      flash[:Error] = "Either Query is Empty or Record Not Found!"
       redirect_to admin_search_path
     end
   end

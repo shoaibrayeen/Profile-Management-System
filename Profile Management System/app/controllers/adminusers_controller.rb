@@ -73,7 +73,7 @@ class AdminusersController < ApplicationController
 
 =begin
   **Author:** Mohd Shoaib Rayeen  
-  **Common Name:** Admin can update user's information and can deactivate 
+  **Common Name:** Admin can update user's information
 =end
   def update
     if params[:name] == "" or params[:email] == "" or params[:contact] == ""
@@ -93,13 +93,29 @@ class AdminusersController < ApplicationController
 
   end
 
+=begin
+  **Author:** Mohd Shoaib Rayeen  
+  **Common Name:** View for change password
+=end
   def change_password
+    #no doc
   end
 
+
+=begin
+  **Author:** Mohd Shoaib Rayeen  
+  **Common Name:** Update User password 
+=end
+
   def update_password
-    if params[:password] != params[:value] or (params[:password] == "" or params[:value] == "")
-      flash[:error] = 'Kindly Enter Correct Password in Both Field'
-      redirect_to admin_change_password_path
+
+    if params[:password].length < 6 or params[:value].length < 6
+      flash[:error] = 'Password Length Should be greater than or equal to 6.'
+      redirect_to adminuser_change_password_path
+      return
+    elsif params[:password] != params[:value] or (params[:password] == "" or params[:value] == "")
+      flash[:error] = 'Password Mismatch!'
+      redirect_to adminuser_change_password_path
       return
     end
     @adminObj = User.update_user_password(params)
@@ -108,10 +124,14 @@ class AdminusersController < ApplicationController
       redirect_to adminusers_path
     else
       flash[:error] = 'Error in Password Storing'
-      redirect_to admin_change_password_path
+      redirect_to adminuser_change_password_path
     end
   end
 
+=begin
+  **Author:** Mohd Shoaib Rayeen  
+  **Common Name:** Change User Status
+=end
 
   def deactivate
     @adminObj = User.user_deactivate(params)
@@ -125,9 +145,20 @@ class AdminusersController < ApplicationController
     redirect_to adminusers_path
   end
 
+
+=begin
+  **Author:** Mohd Shoaib Rayeen  
+  **Common Name:** View for add parent
+=end
+
   def add_parent
     @adminObj = User.get_user_info_by_id(params[:id])
   end
+
+=begin
+  **Author:** Mohd Shoaib Rayeen  
+  **Common Name:** Update Parent in DB
+=end
 
   def update_parent
     ##byebug

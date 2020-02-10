@@ -1,5 +1,9 @@
 class ElasticSearchUpdaterWorker
   include Sidekiq::Worker
+=begin
+  **Author:** Mohd Shoaib Rayeen  
+  **Common Name:** Worker to Update Information in ES   
+=end
 
   def perform(action, id)
     if action == "create"

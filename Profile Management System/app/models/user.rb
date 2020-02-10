@@ -1,6 +1,5 @@
 require 'bcrypt'
 class User < ApplicationRecord
-    #has_secure_password
 
 =begin
   **Author:** Mohd Shoaib Rayeen  
@@ -21,7 +20,6 @@ class User < ApplicationRecord
     validates :email, email:true, uniqueness: true, presence:true
     validates :contact, presence: true, :numericality => true, uniqueness: true, length: { minimum: 10, maximum: 10}
     validates :user_type, presence: true
-    #validates :password, presence: true,  length: { minimum: 6}
 
 
 =begin
@@ -94,6 +92,10 @@ class User < ApplicationRecord
         user.save
     end
 
+=begin
+  **Author:** Mohd Shoaib Rayeen  
+  **Common Name:** Validation of User Information with ES
+=end
     def self.sign_in_validation(query)
         data = self.__elasticsearch__.search(
           {
@@ -107,7 +109,11 @@ class User < ApplicationRecord
         ).records
         return data   
     end
-  
+
+=begin
+  **Author:** Mohd Shoaib Rayeen  
+  **Common Name:** Validation of ID with ES 
+=end
     def self.id_validation(params)
         data = self.__elasticsearch__.search(
           {
@@ -191,7 +197,6 @@ class User < ApplicationRecord
             return "200"
         else
             user.update_columns(status: 'Inactive')
-            session[:authenticate] = false
             return "201"
         end
     end
@@ -214,7 +219,7 @@ class User < ApplicationRecord
 
 =begin
   **Author:** Mohd Shoaib Rayeen  
-  **Common Name:** Checking profile Hierarchy
+  **Common Name:** Checking profile Hierarchy - Vertically -> worked for Cycle as well
 =end
 
     def self.checking_vertical_hierarchy(user_id, user_parent_id)
