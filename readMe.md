@@ -121,7 +121,7 @@ To Use Postman API
 </details>	
 
 <details>
-<summary>Admin Report Result</summary>
+<summary>Admin Report Results</summary>
 
 <img src="/images/admin_report_result.png">
 </details>	
@@ -133,7 +133,7 @@ To Use Postman API
 </details>	
 
 <details>
-<summary>Admin Search Result</summary>
+<summary>Admin Search Results</summary>
 
 <img src="/images/admin_search_result.png">
 </details>	
